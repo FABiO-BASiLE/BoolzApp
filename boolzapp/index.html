@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- FONTAWESOME CSS SHEET -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- CSS SHEET -->
+    <link rel="stylesheet" href="style.css">
+    <title>pagina BoolsApp</title>
+    <!-- JQUERY SCRIPT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- HANDLEBARS SCRIPT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js" charset="utf-8"></script>
+    <!-- MY TEMPLATE -->
+    <script id="box-template" type="text/x-handlebars-template">
+      <div class="box-riga">
+        <div class="{{ class }}">
+          <div class="box-relative-opt">
+            <p class="txt-mex">{{ testo }}</p>
+            <i class="fas fa-check"></i>
+            <span class="time-mex">{{ orario }}</span>
+            <!-- message option -->
+            <div class="box-option-msg">
+              <div class="opt delete">
+                <span>{{ delete }}</span>
+              </div>
+              <div class="opt info">
+                <span>{{ info }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+    <!-- MY JS SCRIPT -->
+    <script src="script.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="sfondo">
+      <div id="rect-green"></div>
+      <div id="rect-grey"></div>
+    </div>
+    <div id="container">
+      <div class="container">
+        <!-- CONTENITORE SINISTRA -->
+        <div class="box sx">
+          <div class="header">
+            <!-- header -->
+            <header>
+              <div class="immg">
+                <img src="https://img.kpopmap.com/2017/11/kim-kookheon.jpg" alt="img del profilo">
+              </div>
+              <!-- contenitore icone dell'header di sinistra -->
+              <div class="box-icon">
+                <i class="far fa-user-circle fa-lg"></i>
+                <i class="fas fa-comment-alt fa-lg"></i>
+                <i class="fas fa-ellipsis-v fa-lg"></i>
+              </div>
+            </header>
+          </div>
+          <!-- notifiche -->
+          <div class="box-notification">
+            <div class="bell-icon">
+              <i class="fas fa-bell-slash fa-lg"></i>
+            </div>
+            <div class="box-txt-notification">
+              <h4>Ricevi notifiche di nuovi messaggi</h4>
+              <a href="#">Attiva notifiche desktop</a>
+            </div>
+          </div>
+          <!-- Input ricerca -->
+          <div class="input-box">
+            <input type="search" class="input">
+            <div class="search">
+              <i class="fas fa-search fa-lg"></i>
+            </div>
+          </div>
+          <!-- Lista messaggi -->
+          <div class="container-contact">
+            <!-- messaggio 1-->
+            <div class="box-mex active">
+              <!--- immagine profilo ------>
+              <div class="immg mex">
+                <img src="imgs/donna.jpg" alt="img del profilo">
+              </div>
+              <!--- dati e contenuto messaggio ------>
+              <div class="box-content-mex">
+                <div class="box_t-o">
+                  <span class="titolo"><strong>Francesca</strong></span>
+                  <span class="orario">11:01</span>
+                </div>
+                <p class="testo">testo del messaggio</p>
+              </div>
+            </div>
+            <!-- messaggio 2-->
+            <div class="box-mex">
+              <!--- immagine profilo ------>
+              <div class="immg mex">
+                <img src="imgs/uomo.jpg" alt="img del profilo">
+              </div>
+              <!--- dati e contenuto messaggio ------>
+              <div class="box-content-mex">
+                <div class="box_t-o">
+                  <span class="titolo"><strong>Paolo</strong></span>
+                  <span class="orario">11:01</span>
+                </div>
+                <p class="testo">testo del messaggio. testo del messaggio. testo del messaggio.</p>
+              </div>
+            </div>
+            <!-- messaggio 3-->
+            <div class="box-mex">
+              <!--- immagine profilo ------>
+              <div class="immg mex">
+                <img src="imgs/mark.jpg" alt="img del profilo">
+              </div>
+              <!--- dati e contenuto messaggio ------>
+              <div class="box-content-mex">
+                <div class="box_t-o">
+                  <span class="titolo"><strong>Mark</strong></span>
+                  <span class="orario">11:01</span>
+                </div>
+                <p class="testo">testo del messaggio. testo del messaggio.</p>
+              </div>
+            </div>
+            <!-- messaggio 4-->
+            <div class="box-mex">
+              <!--- immagine profilo ------>
+              <div class="immg mex">
+                <img src="https://img.kpopmap.com/2017/11/kim-kookheon.jpg" alt="img del profilo">
+              </div>
+              <!--- dati e contenuto messaggio ------>
+              <div class="box-content-mex">
+                <div class="box_t-o">
+                  <span class="titolo"><strong>Sakamoto</strong></span>
+                  <span class="orario">11:01</span>
+                </div>
+                <p class="testo">Sono io stesso</p>
+              </div>
+            </div>
+            </div>
+        </div>
+        <!-- CONTENITORE DESTRA -->
+        <div class="box dx">
+                  <!-- CONTATTO 1 -->
+          <div class="dinamic-tab selected">
+            <!-- header dx 1-->
+            <header>
+              <div class="immg">
+                <img src="imgs/donna.jpg" alt="img del profilo">
+              </div>
+              <div class="box-icon">
+                <i class="far fa-user-circle fa-lg"></i>
+                <i class="fas fa-comment-alt fa-lg"></i>
+                <i class="fas fa-ellipsis-v fa-lg"></i>
+              </div>
+            </header>
+            <!-- __Chat 1__ -->
+            <div class="chat">
+              <div class="wrapper">
+                <!--- Mex in Entrata ---->
+                <div class="box-riga">
+                  <div class="mex-sent">
+                    <div class="box-relative-opt">
+                      <p class="txt-mex">Testo esempio di un messaggio in entrata, cioè inviato da uno dei contatti dello smartphone</p>
+                      <i class="fas fa-check"></i>
+                      <span class="time-mex">17:13</span>
+                      <!-- message option -->
+                      <div class="box-option-msg">
+                        <div class="opt delete">
+                          <span>Delete Message</span>
+                        </div>
+                        <div class="opt info">
+                          <span>Info Message</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--- Mex in Uscita ---->
+                <div class="box-riga">
+                  <div class="mex-received">
+                    <div class="box-relative-opt">
+                      <p class="txt-mex">Testo esempio di un messaggio in uscita, cioè inviato dal possessore dello smartphone</p>
+                      <i class="fas fa-check"></i>
+                      <span class="time-mex">17:15</span>
+                      <!-- message option -->
+                      <div class="box-option-msg">
+                        <div class="opt delete">
+                          <span>Delete Message</span>
+                        </div>
+                        <div class="opt info">
+                          <span>Info Message</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- END .dinamic-tab -->
+                      <!-- CONTATTO 2 -->
+          <div class="dinamic-tab">
+            <!-- header dx 2-->
+            <header>
+              <div class="immg">
+                <img src="imgs/uomo.jpg" alt="img del profilo">
+              </div>
+              <div class="box-icon">
+                <i class="far fa-user-circle fa-lg"></i>
+                <i class="fas fa-comment-alt fa-lg"></i>
+                <i class="fas fa-ellipsis-v fa-lg"></i>
+              </div>
+            </header>
+            <!-- __Chat 2__ -->
+            <div class="chat">
+              <div class="wrapper">
+                <!--- Mex in Entrata ---->
+                <div class="box-riga">
+                  <div class="mex-sent">
+                    <div class="box-relative-opt">
+                      <p class="txt-mex">Messaggio di PAOLO!!</p>
+                      <i class="fas fa-check"></i>
+                      <span class="time-mex">11:13</span>
+                      <!-- message option -->
+                      <div class="box-option-msg">
+                        <div class="opt delete">
+                          <span>Delete Message</span>
+                        </div>
+                        <div class="opt info">
+                          <span>Info Message</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--- Mex in Uscita ---->
+                <div class="box-riga">
+                  <div class="mex-received">
+                    <div class="box-relative-opt">
+                      <p class="txt-mex">Ciao Paolo...come stai?</p>
+                      <i class="fas fa-check"></i>
+                      <span class="time-mex">11:15</span>
+                      <!-- message option -->
+                      <div class="box-option-msg">
+                        <div class="opt delete">
+                          <span>Delete Message</span>
+                        </div>
+                        <div class="opt info">
+                          <span>Info Message</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- END .dinamic-tab -->
+                      <!-- CONTATTO 3 -->
+          <div class="dinamic-tab">
+            <!-- header dx 3-->
+            <header>
+              <div class="immg">
+                <img src="imgs/mark.jpg" alt="img del profilo">
+              </div>
+              <div class="box-icon">
+                <i class="far fa-user-circle fa-lg"></i>
+                <i class="fas fa-comment-alt fa-lg"></i>
+                <i class="fas fa-ellipsis-v fa-lg"></i>
+              </div>
+            </header>
+            <!-- __Chat 3__ -->
+            <div class="chat">
+              <div class="wrapper">
+                <!--- Mex in Entrata ---->
+                <div class="box-riga">
+                  <div class="mex-sent">
+                    <div class="box-relative-opt">
+                      <p class="txt-mex">Howdy Fabio...how are you?? It would be wounderful have you with us!!</p>
+                      <i class="fas fa-check"></i>
+                      <span class="time-mex">07:33</span>
+                      <!-- message option -->
+                      <div class="box-option-msg">
+                        <div class="opt delete">
+                          <span>Delete Message</span>
+                        </div>
+                        <div class="opt info">
+                          <span>Info Message</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--- Mex in Uscita ---->
+                <div class="box-riga">
+                  <div class="mex-received">
+                    <div class="box-relative-opt">
+                      <p class="txt-mex">Sorry Mark...TOO LATE!</p>
+                      <i class="fas fa-check"></i>
+                      <span class="time-mex">11:15</span>
+                      <!-- message option -->
+                      <div class="box-option-msg">
+                        <div class="opt delete">
+                          <span>Delete Message</span>
+                        </div>
+                        <div class="opt info">
+                          <span>Info Message</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- END .dinamic-tab -->
+                      <!-- CONTATTO 4 -->
+          <div class="dinamic-tab">
+            <!-- header dx 4-->
+            <header>
+            <div class="immg">
+              <img src="imgs/kim-kookheon.jpg" alt="img del profilo">
+            </div>
+            <div class="box-icon">
+              <i class="far fa-user-circle fa-lg"></i>
+              <i class="fas fa-comment-alt fa-lg"></i>
+              <i class="fas fa-ellipsis-v fa-lg"></i>
+            </div>
+            </header>
+            <!-- __Chat 4__ -->
+            <div class="chat">
+              <div class="wrapper">
+                <!--- Mex in Entrata ---->
+                <div class="box-riga">
+                  <div class="mex-sent">
+                    <div class="box-relative-opt">
+                      <p class="txt-mex">Arigato...</p>
+                      <i class="fas fa-check"></i>
+                      <span class="time-mex">07:33</span>
+                      <!-- message option -->
+                      <div class="box-option-msg">
+                        <div class="opt delete">
+                          <span>Delete Message</span>
+                        </div>
+                        <div class="opt info">
+                          <span>Info Message</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--- Mex in Uscita ---->
+                <div class="box-riga">
+                  <div class="mex-received">
+                    <div class="box-relative-opt">
+                      <p class="txt-mex">...Aspaghettì!!</p>
+                      <i class="fas fa-check"></i>
+                      <span class="time-mex">11:15</span>
+                      <!-- message option -->
+                      <div class="box-option-msg">
+                        <div class="opt delete">
+                          <span>Delete Message</span>
+                        </div>
+                        <div class="opt info">
+                          <span>Info Message</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- END .dinamic-tab -->
+          <!-- footer -->
+          <footer>
+            <div class="emoji">
+              <i class="far fa-smile fa-2x"></i>
+            </div>
+            <div class="input-chat">
+              <input type="text" class="input-txt" placeholder="Digita...">
+            </div>
+            <div class="emoji">
+              <i class="fas fa-microphone fa-2x"></i>
+            </div>
+          </footer>
+      </div>
+    </div>
+  </body>
+</html>
