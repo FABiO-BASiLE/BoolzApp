@@ -1,61 +1,3 @@
-// function testAddMessage(sent, content) {
-//
-//   var wrapper = $(".dinamic-tab.selected .wrapper");
-//
-//   var rigaBox = document.createElement("div");
-//   var message = document.createElement("div");
-//   var boxMsg = document.createElement("div");
-//   var messageContent = document.createElement("p");
-//   var check = document.createElement("i");
-//   var messageDetail = document.createElement("span");
-//   var optionWin = document.createElement("div");
-//   var divDelete = document.createElement("div");
-//   var divInfo = document.createElement("div");
-//   var txtDelete = document.createElement("span");
-//   var txtInfo = document.createElement("span");
-//
-//   if (sent) {
-//
-//     $(message).addClass("mex-received");
-//     $(boxMsg).addClass("box-relative-opt");
-//     $(check).addClass("fas fa-check");
-//     $(rigaBox).addClass("box-riga");
-//     $(messageContent).addClass("txt-mex").text(content);
-//     $(messageDetail).addClass("time-mex").text("12:34");
-//     $(optionWin).addClass("box-option-msg");
-//     $(divDelete).addClass("opt delete");
-//     $(divInfo).addClass("opt info");
-//     $(txtDelete).text("Delete Message");
-//     $(txtInfo).text("Info Message");
-//   } else {
-//
-//     $(message).addClass("mex-sent");
-//     $(boxMsg).addClass("box-relative-opt");
-//     $(check).addClass("fas fa-check");
-//     $(rigaBox).addClass("box-riga");
-//     $(messageContent).addClass("txt-mex").text(content);
-//     $(messageDetail).addClass("time-mex").text("12:34");
-//     $(optionWin).addClass("box-option-msg");
-//     $(divDelete).addClass("opt delete");
-//     $(divInfo).addClass("opt info");
-//     $(txtDelete).text("Delete Message");
-//     $(txtInfo).text("Info Message");
-//   }
-//
-//   rigaBox.append(message);
-//   message.append(boxMsg);
-//   boxMsg.append(messageContent);
-//   boxMsg.append(check);
-//   boxMsg.append(messageDetail);
-//   boxMsg.append(optionWin);
-//   optionWin.append(divDelete);
-//   optionWin.append(divInfo);
-//   divDelete.append(txtDelete);
-//   divInfo.append(txtInfo);
-//
-//   return rigaBox;
-// }
-
 function getRndAnswerAPI() {
 
   $.ajax({
@@ -72,25 +14,6 @@ function getRndAnswerAPI() {
         var scrollSelector = $(".box.dx .wrapper");
         scrollSelector.animate({scrollTop: scrollSelector.prop("scrollHeight")});// scroll automatico all'aggiunta di messaggi che raggiungon il fondo della pagina
       }
-
-      // codice con mia logica
-      // var inData = {
-      //   class : "mex-sent",
-      //   testo : data.response,
-      //   orario : "17:13",
-      //   delete : "Delete Message",
-      //   info : "Info Message",
-      // };
-      //
-      // if (data.success) {
-      //
-      //   var wrapper = $(".dinamic-tab.selected .wrapper");
-      //   var template = $("#box-template").html();
-      //   var compiled = Handlebars.compile(template);
-      //   var msgHTML = compiled(inData);
-      //
-      //   wrapper.append(msgHTML);
-      // }
     },
     error : function(request, state, error) {
 
